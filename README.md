@@ -186,3 +186,7 @@ print(probabilities)   # → {'Positive': 1.000, 'Negative': 0.000, 'Neutral': 0
 ```
 
 The function automatically uses the **best-performing model** found during training.
+
+## Author
+
+**Md. Tausif Jafar**
