@@ -23,9 +23,8 @@ This project builds a complete **Tweet Sentiment Analysis pipeline** that:
 | Property                | Detail                                                   |
 | ----------------------- | -------------------------------------------------------- |
 | **File**          | `Dataset/twitter_dataset.csv`                          |
-| **Source**        | Twitter Training & Validation datasets (merged into one) |
 | **Total Samples** | ~38,000 tweets                                           |
-| **Classes**       | Positive, Negative, Neutral                              |
+| **Classes**       | Positive, Negative, Neutral, Irrelevant                              |
 | **Split**         | 80% Training / 20% Test (stratified)                     |
 
 ### Class Mapping
@@ -56,7 +55,7 @@ Each tweet goes through the following steps before being fed into the model:
 2. **Contraction expansion** — `n't` → `not`, `won't` → `will not`, `can't` → `cannot`
 3. **URL & username removal** — `http://...`, `@user` stripped
 4. **Hashtag cleaning** — `#` symbol removed, word kept
-5. **Character deduplication** — `loooove` → `loove` (max 2 repeats)
+5. **Character deduplication** — `loooove` → `love` (max 2 repeats)
 6. **Sentiment markers** — `!` → adds token `exclamation`; `?` → adds token `question`
 7. **Negation compound tokens** — `not bad` → `not_bad` (fixes bag-of-words negation problem)
 8. **Stopword removal** — using NLTK, keeping sentiment-preserving words (`not`, `never`, `very`, `really`, etc.)
